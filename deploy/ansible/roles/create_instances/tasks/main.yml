@@ -16,5 +16,6 @@
     name: "{{ item['openstack']['human_id'] }}"
     groups: "{{ item['item']['meta']['group'] }}"
     ansible_host: "{{ item.openstack.accessIPv4 }}"
+    ansible_ssh_user: ubuntu
   with_items: "{{ os_hosts.results }}"
 

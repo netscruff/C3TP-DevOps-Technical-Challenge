@@ -3,3 +3,17 @@
   hosts: localhost
   roles:
     - { role: create_instances }
+
+
+- name: bootstrap instances 
+  hosts: spark
+  gather_facts: false
+  become: yes
+  roles:
+    - bootstrap_instances
+
+- name: install spark
+  hosts: spark
+  become: yes
+  roles:
+    - azavea.spark
