@@ -1,2 +1,0 @@
-azavea.java
-azavea.spark
