@@ -19,3 +19,10 @@
     ansible_ssh_user: ubuntu
   with_items: "{{ os_hosts.results }}"
 
+- name: wait for instance launch
+  wait_for:
+    port: 22
+    delay: 5
+    timeout: 600
+    host: "{{ item.openstack.accessIPv4 }}"
+  with_items: "{{ os_hosts.results }}"

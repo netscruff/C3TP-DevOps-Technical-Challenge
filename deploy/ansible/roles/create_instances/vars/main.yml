@@ -22,3 +22,10 @@ servers:
     nics: "net-id=f13a0914-b197-4325-87e0-a0c165f8af08"
     meta:
       group: spark
+  - name: hdfs1 
+    image: bd205092-14a8-4b13-ad78-0581b2540287
+    flavor: 3
+    key: dtb17
+    nics: "net-id=f13a0914-b197-4325-87e0-a0c165f8af08"
+    meta:
+      group: hdfs 

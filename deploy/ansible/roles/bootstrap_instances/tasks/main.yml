@@ -1,4 +1,0 @@
----
-
-- name: Install Python
-  apt: name=python-minimal update_cache=yes

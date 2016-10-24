@@ -1,2 +1,3 @@
 # install_roles.yml
 - src: azavea.spark
+- src: azavea.hdfs

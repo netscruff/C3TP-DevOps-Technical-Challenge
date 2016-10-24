@@ -2,18 +2,22 @@
 - name: create instances
   hosts: localhost
   roles:
-    - { role: create_instances }
+    - create_instances
 
-
-- name: bootstrap instances 
-  hosts: spark
-  gather_facts: false
+- name: update cache
+  hosts: spark, hdfs
   become: yes
   roles:
-    - bootstrap_instances
+    - update_cache
 
 - name: install spark
   hosts: spark
   become: yes
   roles:
     - azavea.spark
+
+- name: install hdfs
+  hosts: hdfs
+  become: yes
+  roles:
+    - azavea.hdfs
